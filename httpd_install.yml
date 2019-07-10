@@ -1,0 +1,7 @@
+---
+ - name: Installation of httpd on RHEL server
+   hosts: test
+   become: yes
+   remote_user: root
+   roles:
+    - httpd_installation

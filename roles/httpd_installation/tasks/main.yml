@@ -1,0 +1,3 @@
+---
+# tasks file for /opt/ansible_playbook/httpd/roles/httpd_installation
+   - include: rhel_httpd_install.yml

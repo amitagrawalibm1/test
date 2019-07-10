@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - /opt/ansible_playbook/httpd/roles/httpd_uninstallation

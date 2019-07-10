@@ -1,0 +1,26 @@
+pipeline {
+ agent any
+ stages {
+     stage('Build') {
+         steps {
+             echo 'Building..'
+         }
+     }
+     stage('running httpd playbook') {
+       steps {
+         dir('${WORKSPACE}/abcd') {
+           ansiblePlaybook([
+             inventory   : 'hosts',
+             playbook    : 'httpd_install.yml',
+             installation: 'ansible',
+             colorized   : true,
+            ])
+          // you can also assign new value to the env
+          // variable depending on results of the script execution
+          // env.MY_ENV_VAR = 'something'
+          }
+        }
+      }
+  }
+}
+
